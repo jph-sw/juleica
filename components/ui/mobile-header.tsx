@@ -28,63 +28,20 @@ export function MobileHeader(props: { items: NavItem[] }) {
         </button>
       </div>
       {isOpen && (
-        <div className="min-h-[50vw] bg-gradient-to-b from-background to-sky-100">
+        <div className="min-h-[50vw] bg-gradient-to-b from-background to-[#94f2e960]">
           <div className="flex flex-col gap-3 p-4">
             {props.items.map((e, i) => (
               <div key={i}>
-                {e.children ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant={"outline"}
-                        className="w-full"
-                        size={"lg"}
-                      >
-                        {e.label}
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-[50vw]">
-                      <DropdownMenuLabel asChild>
-                        <div className="flex justify-between items-center">
-                          <Link
-                            onClick={() => setIsOpen(false)}
-                            href={"/spiele"}
-                          >
-                            Spiele
-                          </Link>
-                          <Link
-                            href={"/spiele"}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <Expand size={16} />
-                          </Link>
-                        </div>
-                      </DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      {e.children.map((e, i) => (
-                        <DropdownMenuItem key={i}>
-                          <Link
-                            href={"/spiele/" + e.name}
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {e.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Button
-                    className="w-full"
-                    variant={"outline"}
-                    size={"lg"}
-                    key={i}
-                    asChild
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Link href={e.href}>{e.label}</Link>
-                  </Button>
-                )}
+                <Button
+                  className="w-full"
+                  variant={"outline"}
+                  size={"lg"}
+                  key={i}
+                  asChild
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link href={e.href}>{e.label}</Link>
+                </Button>
               </div>
             ))}
           </div>

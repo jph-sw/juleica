@@ -20,7 +20,6 @@ const items: NavItem[] = [
       name: e.name,
     })),
   },
-  { label: "Über uns", href: "/ueber-uns" },
 ];
 
 export function Navbar() {

@@ -13,7 +13,7 @@ export default function Page() {
               className={`group font-semibold text-xl flex gap-2`}
               id={e.label}
             >
-              <h2>{e.label}</h2>
+              <Link href={e.href}>{e.label}</Link>
               <span className="hidden group-hover:block">#</span>
             </div>
             {/* <div>
